@@ -1,5 +1,7 @@
 # pinephone-max30102
- max30102 sensor board for PinePhone
+Pulse Oximeter and
+Heart-Rate sensor board for PinePhone
+
 
 Intefarce: I2C 
 
