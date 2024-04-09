@@ -1,6 +1,6 @@
 """
 MIT License
-Copyright (c) 2021 Jose Navarro
+Copyright (c) 2024 Jose Navarro
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -24,28 +24,40 @@ import smbus
 import time
 import os
 import curses
-#from amg8833_registers import * #Registers can be stored in a different file and imported here.
+#from MAX30102_registers import * #Registers can be stored in a different file and imported here.
 
 #Sensor is in I2C channel 3 
 i2c_ch = 3
 
-#AMG8233 address on the I2C bus
-i2c_address = 0x68
+#MAX30102 address on the I2C bus
+i2c_address = 
 
-# Register addresses
-pixeltest = 0x80 	#Register used for debug lines. 
+##MAX30102 Register addresses
 
-row1 = [0x80, 0x82, 0x84, 0x86, 0x88, 0x8A, 0x8C, 0x8E] 
-row2 = [0x90, 0x92, 0x94, 0x96, 0x98, 0x9A, 0x9C, 0x9E] 
-row3 = [0xA0, 0xA2, 0xA4, 0xA6, 0xA8, 0xAA, 0xAC, 0xAE]
-row4 = [0xB0, 0xB2, 0xB4, 0xB6, 0xB8, 0xBA, 0xBC, 0xBE]
-row5 = [0xC0, 0xC2, 0xC4, 0xC6, 0xC8, 0xCA, 0xCC, 0xCE]
-row6 = [0xD0, 0xD2, 0xD4, 0xD6, 0xD8, 0xDA, 0xDC, 0xDE]
-row7 = [0xA0, 0xE2, 0xE4, 0xE6, 0xE8, 0xEA, 0xEC, 0xEE]
-row8 = [0xF0, 0xF2, 0xF4, 0xF6, 0xF8, 0xFA, 0xFC, 0xFE]
+#Status registers
+INTSTATUS1 = 0x00  
+INTSTATUS2 = 0x01
+INTENABLE1 = 0x02
+INTENABLE2 = 0x03
 
-rows = [row1, row2, row3, row4, row5, row6, row7, row8]
+#FIFO registers
+FIFOWRITEPOINTER = 0x04
+OVERFLOWCOUNTER = 0x05
+FIFOREADPOINTER = 0x06
+FIFODATAREGISTER = 0x07
 
+#Configuration registers
+FIFOCONFIGURATION = 0x08
+MODECONFIGURATION = 0x09
+SPO2CONFIGURATION = 0x0A
+RESERVED = 0x0B
+LEDPULSEAMPLITUDE = 0x0C
+RESERVED2 = 0X0E
+RESERVED3 = 0x0F
+MULTILEDMODECONTROL1 = 0x11
+MULTILEDMODECONTROL2 = 0x12 
+
+#I2C initialization
 print("Initializing the I2C Bus")
 bus = smbus.SMBus(i2c_ch)
 time.sleep(1)
