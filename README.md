@@ -20,6 +20,15 @@ To expose the power and interfaces in the pogo pins you can use my other design 
 ![max30102 system diagram](/support_files/images/system_diagram.JPG)
 
 
+## Component placement
+
+In progress . . .
+
+U4 Is currently placed in the bottom right as user will use the index finger to place it on top of this sensor. 
+
+![component placement](/support_files/images/component_placement_20240414.JPG)
+
+
 ## License
 
 Released under the Creative Commons Attribution 4.0 License
