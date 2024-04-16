@@ -24,9 +24,9 @@ To expose the power and interfaces in the pogo pins you can use my other design 
 
 In progress . . .
 
-U4 Is currently placed in the bottom right as user will use the index finger to place it on top of this sensor. 
+U4 Is currently placed in the bottom of the board as user will use the index finger to place it on top of this sensor. 
 
-![component placement](/support_files/images/component_placement_20240414.JPG)
+![component placement](/support_files/images/board.JPG)
 
 
 ## License
