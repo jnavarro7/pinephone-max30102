@@ -3,7 +3,7 @@ Pulse Oximeter and
 Heart-Rate sensor board for PinePhone
 
 ## What it is:
-Sensor board attaches I2C interface exposed on the pogo pin expansion port in the back of the PinePhone.  
+Sensor board that sports the MAX30102 pulse oximeter and heart-rate sensor. The board attaches to the I2C interface exposed on the pogo pin expansion port in the back of the PinePhone.  
 Interface is numbered as i2c-3 in multiple operating systems.
 To expose the power and interfaces in the pogo pins you can use my other design "PinePhone flex breakout board".   
 
@@ -27,7 +27,7 @@ To expose the power and interfaces in the pogo pins you can use my other design 
 
 ## Component placement
 
-In progress . . .
+Revision 1 placement completed.
 
 U4 Is currently placed in the bottom of the board as user will use the index finger to place it on top of this sensor. 
 
