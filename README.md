@@ -11,6 +11,11 @@ To expose the power and interfaces in the pogo pins you can use my other design 
 
 <a href="https://pine64.com/product/pinephone-flex-break-out-board/" title="Buy the PinePhoone flex breakout board from Pine64">Buy the PinePhone flex breakout board from Pine64</a>
 
+## Block Diagram
+
+![block_diagram](/support_files/images/block_diagram.JPG)
+
+
 ## Sensor
 
 
