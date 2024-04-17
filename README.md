@@ -31,8 +31,13 @@ Revision 1 placement completed.
 
 U4 Is currently placed in the bottom of the board as user will use the index finger to place it on top of this sensor. 
 
-![component placement](/support_files/images/board.JPG)
+![board top](/support_files/images/board.JPG)
 
+![board bottom](/support_files/images/board_bottom.JPG)
+
+## EDA
+
+Designed in DipTrace 4.3
 
 ## License
 
