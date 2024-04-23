@@ -62,53 +62,6 @@ print("Initializing the I2C Bus")
 bus = smbus.SMBus(i2c_ch)
 time.sleep(1)
 
-def debug_test():
-	val = bus.read_i2c_block_data(i2c_address, pixeltest, 1)
-	print("Test Value:", val)
-	val = bus.read_byte_data(i2c_address, pixeltest)
-	print(val)
 
-def readpixels():
-	# Read the Pixel 1 register (1 bytes)
-	for i in pixel:
-		val = bus.read_i2c_block_data(i2c_address, i)
-		print("Value:", val)
-		time.sleep(0.001)
-
-
-def color_select(tempround):
-	if tempround <= 22.0:
-		return '\x1b[6;37;44m'
-	elif tempround > 22.0 and tempround <= 24.0:
-		return '\x1b[6;37;42m'
-	elif tempround > 24.0 and tempround <= 36.0:
-		return '\x1b[6;30;43m'
-	elif tempround >= 36.0:
-		return '\x1b[6;37;41m'
-	else:
-		return '\x1b[6;37;40m'
-
-def readrows():
-	for i in rows:
-		for j in i:
-			val = bus.read_byte_data(i2c_address, j)			#Read pixels from AMG8833 sensor
-			valstr = str(val)									#Convert "val" to string
-			dec = int(valstr, 16)								#Convert Hexadecimal to decimal
-			temp = dec * 0.25									#Convert to Celcius degress
-			tempround = round(temp,1)							#Round temperature to a single decimal point
-			#print(tempround,end = " ")
-			strtempround = str(tempround)						#Convert tempround to string
-			#print('\x1b[6;37;44m' + strtempround + '\x1b[0m',end = " ")
-			color = ""											#Define "color" variable as empty
-			color = color_select(tempround)						#Function to assign a color depending on the temperature
-			print(color + strtempround + '\x1b[0m',end = " ")	#Prints temperature in Celcius degress and color we have assigned depending on its range		
-			time.sleep(0.001)
-		print()
-
-
-os.system("clear")			#Clean the terminal
-while True:					#Run sensor pixels read and display 
-	readrows()
-	time.sleep(0.3)
-	os.system("clear")
+while True:				
 
