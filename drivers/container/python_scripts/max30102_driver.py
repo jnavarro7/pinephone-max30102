@@ -17,7 +17,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Python script to read the pixels on the AMG8833 sensor which is a thermal imaging solution from Panasonic.
+Python script to drive the MAX30102 pulse oximeter & heart-rate monitor sensor.
 """
 
 import smbus
@@ -30,7 +30,8 @@ import curses
 i2c_ch = 3
 
 #MAX30102 address on the I2C bus
-i2c_address = 
+read_i2c_address = 0xAF
+write_i2c_address = 0xAE
 
 ##MAX30102 Register addresses
 
@@ -56,6 +57,44 @@ RESERVED2 = 0X0E
 RESERVED3 = 0x0F
 MULTILEDMODECONTROL1 = 0x11
 MULTILEDMODECONTROL2 = 0x12 
+
+#Reserved
+RESERVED_01 = 0x13
+RESERVED_02 = 0x14
+RESERVED_03 = 0x14
+RESERVED_04 = 0x15 
+RESERVED_05 = 0x16
+RESERVED_06 = 0x17
+RESERVED_07 = 0x18
+RESERVED_08 = 0x19
+RESERVED_09 = 0x1A
+RESERVED_10 = 0x1B
+RESEVERD_11 = 0x1C
+RESERVED_12 = 0x1D
+RESERVED_13 = 0x1E
+
+#Die temperature
+DIE_TEMP_INT = 0x20
+DIE_TEMP_FRACTION = 0x21
+DIE_TEMP_CONFIG = 0x22
+#Die temperature reserved
+DIE_TEMP_RESERVED_01 = 0x23
+DIE_TEMP_RESERVED_02 = 0x24
+DIE_TEMP_RESERVED_03 = 0x25
+DIE_TEMP_RESERVED_04 = 0x26
+DIE_TEMP_RESERVED_05 = 0x27
+DIE_TEMP_RESERVED_06 = 0x28
+DIE_TEMP_RESERVED_07 = 0x29
+DIE_TEMP_RESERVED_08 = 0x2A
+DIE_TEMP_RESERVED_09 = 0x2B
+DIE_TEMP_RESERVED_10 = 0x2C
+DIE_TEMP_RESERVED_11 = 0x2D
+DIE_TEMP_RESERVED_12 = 0x2E
+DIE_TEMP_RESERVED_13 = 0x2F
+
+#Part ID
+REV_ID = 0xFE
+PART_ID = 0xFF
 
 #I2C initialization
 print("Initializing the I2C Bus")

@@ -24,6 +24,9 @@ To expose the power and interfaces in the pogo pins you can use my other design 
 
 ![max30102 system diagram](/support_files/images/system_diagram.JPG)
 
+### I2C address 
+    Write address = 0xAE 
+    Read address = 0xAF
 
 ## Component placement
 
