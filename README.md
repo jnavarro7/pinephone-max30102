@@ -45,6 +45,10 @@ U4 Is currently placed in the bottom of the board as user will use the index fin
 
 Designed in DipTrace 4.3
 
+## Order test board with OSHPark 
+
+[OSHPark shared project](https://oshpark.com/shared_projects/6M6yBA50)
+
 ## License
 
 Released under the Creative Commons Attribution 4.0 License
