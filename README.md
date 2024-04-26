@@ -8,7 +8,7 @@ Interface is numbered as i2c-3 in multiple operating systems.
 To expose the power and interfaces in the pogo pins you can use my other design "PinePhone flex breakout board". 
 
 
-<a href="https://github.com/jnavarro7/pinephone_flex_breakout_board" title="PinePhoone flex breakout board">PinePhone flex breakout board source</a>
+<a href="https://github.com/jnavarro7/pinephone_flex_breakout_board" title="PinePhoone flex breakout board">PinePhone flex breakout board GitHub repository</a>
 
 <a href="https://pine64.com/product/pinephone-flex-break-out-board/" title="Buy the PinePhoone flex breakout board from Pine64">Buy the PinePhone flex breakout board from Pine64</a>
 
