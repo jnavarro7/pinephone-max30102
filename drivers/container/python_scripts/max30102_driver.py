@@ -42,10 +42,10 @@ INTENABLE1 = 0x02
 INTENABLE2 = 0x03
 
 #FIFO registers
-FIFOWRITEPOINTER = 0x04
-OVERFLOWCOUNTER = 0x05
-FIFOREADPOINTER = 0x06
-FIFODATAREGISTER = 0x07
+FIFO_WR_PTR = 0x04
+OVF_COUNTER = 0x05
+FIFO_RD_PTR = 0x06
+FIFO_DATA = 0x07
 
 #Configuration registers
 FIFOCONFIGURATION = 0x08
@@ -102,9 +102,15 @@ bus = smbus.SMBus(i2c_ch)
 time.sleep(1)
 
 #Sensor setup
+##FIFOCONFIGURATION can set 3 items in the sensor: Sample average, FIFO rollover enable and FIFO almost full interrupt trigger
 bus.write_i2c_block_data(write_i2c_address, FIFOCONFIGURATION, <value>) #FIFO config
 
-#Work with the FIFO
-bus.write_i2c_block_data(write_i2c_address, FIFOWRITEPOINTER, 0x00)
+#Reset
+##Recommended Practices:
+##Reset (0x00) FIFO_WR_PTR, FIFO_RD_PTR, and OVF_COUNTER when starting a new heart rate or SpO2 conversio
+bus.write_i2c_block_data(write_i2c_address, FIFO_WR_PTR, 0x00)
+bus.write_i2c_block_data(write_i2c_address, FIFO_RD_PTR, 0x00)
+bus.write_i2c_block_data(write_i2c_address, OVF_COUNTER, 0x00)
 	
+
 
