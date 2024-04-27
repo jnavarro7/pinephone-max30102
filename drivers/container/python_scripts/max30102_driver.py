@@ -102,7 +102,7 @@ bus = smbus.SMBus(i2c_ch)
 time.sleep(1)
 
 #Sensor setup
-bus.write_i2c_block_data(write_i2c_address, <REGISTER>, <value>)
+bus.write_i2c_block_data(write_i2c_address, FIFOCONFIGURATION, <value>) #FIFO config
 
 #Work with the FIFO
 bus.write_i2c_block_data(write_i2c_address, FIFOWRITEPOINTER, 0x00)
