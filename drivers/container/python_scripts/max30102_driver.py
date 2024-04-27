@@ -101,6 +101,10 @@ print("Initializing the I2C Bus")
 bus = smbus.SMBus(i2c_ch)
 time.sleep(1)
 
+#Sensor setup
+bus.write_i2c_block_data(write_i2c_address, <REGISTER>, <value>)
 
-while True:				
+#Work with the FIFO
+bus.write_i2c_block_data(write_i2c_address, FIFOWRITEPOINTER, 0x00)
+	
 
