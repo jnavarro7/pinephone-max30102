@@ -2,10 +2,10 @@
 
 ## The prompt: 
 
-    From the attached MAX30102 data sheet generate a sensor test driver using python that will be run on a PinePhone with Manjaro OS over the I2C interface which is numbered as i2c-3, use 0xAE as the write address and 0xAF as the read address, give instructions on how to cover for any dependency.  
+"From the attached MAX30102 data sheet generate a sensor test driver using python that will be run on a PinePhone with Manjaro OS over the I2C interface which is numbered as i2c-3, use 0xAE as the write address and 0xAF as the read address, give instructions on how to cover for any dependency."  
 
 
-The genated driver: 
+## The genated driver: 
 
 [ai-generated-driver.py](ai-generated-driver.py)
 
